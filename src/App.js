@@ -1,25 +1,27 @@
-import logo from './logo.svg';
+import {Router} from '@reach/router';
 import './App.css';
-
+import React from 'react';
+import LandingPage from './Components/Land/landing';
+import LoginPage from './Components/Logsss/logs';
+import MainPage from './Components/Mains/fp';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Router>
+        <Lands path='/'></Lands>
+        <Logins path='/log'></Logins>
+        <Maines path='/main'></Maines>
+      </Router>
     </div>
   );
 }
-
+function Lands(){
+  return <LandingPage></LandingPage>
+}
+function Maines(){
+  return <MainPage></MainPage>
+}
+function Logins(){
+  return <LoginPage></LoginPage>
+}
 export default App;
